@@ -1,4 +1,5 @@
 [![Netlify Status](https://api.netlify.com/api/v1/badges/129e2369-c652-4ee2-bc66-eca1e39ce598/deploy-status)](https://app.netlify.com/sites/meteo-forecast/deploys)
+[![Build Status](https://travis-ci.com/ShaneRich5/meteo-web.svg?branch=main)](https://travis-ci.com/ShaneRich5/meteo-web)
 
 # ⛅ Meteo Web
 

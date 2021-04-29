@@ -4,6 +4,8 @@
 
 A weather app being used to gain experience with the latest web technologies
 
+Visit the [live site](https://meteo-forecast.netlify.app/)
+
 ## ✔️ TODO
 
 - [x] Setup the Typescript boilerplate with Create React App

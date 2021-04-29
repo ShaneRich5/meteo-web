@@ -1,6 +1,7 @@
 import React from 'react'
 import dotsIcon from './icons/dots.svg'
 import sunnyIcon from './icons/sunny.svg'
+import logo from './icons/logo-color.svg'
 
 const Dots = () => <img src={dotsIcon} className="cursor-pointer h-6 w-6" alt="see more" />
 
@@ -23,55 +24,60 @@ const DailyForecast = () => (
 
 function App() {
   return (
-    <main className="bg-gray-200 h-screen flex flex-col">
-      <div className="flex-grow flex justify-center items-center flex-col">
-        <div className="max-w-lg flex flex-wrap">
-          <div className="bg-white rounded-3xl shadow flex-grow w-full flex flex-col mb-4 px-8 pt-8">
-            <div className="flex justify-between pb-4">
-              <div className="flex flex-col justify-center">
-                <h3 className="text-8xl text-gray-700	font-semibold font-mono">23<span>&#176;</span></h3>
-                <p className="text-gray-400 font-semibold font-mono">Coimbra, Portugal</p>
+    <>
+      <main className="bg-gray-200 h-screen flex flex-col">
+        <header className="self-center p-4">
+          <img src={logo} className="h-8" />
+        </header>
+        <div className="flex-grow flex justify-center items-center flex-col">
+          <div className="max-w-lg flex flex-wrap">
+            <div className="bg-white rounded-3xl shadow flex-grow w-full flex flex-col mb-4 px-8 pt-8">
+              <div className="flex justify-between pb-4">
+                <div className="flex flex-col justify-center">
+                  <h3 className="text-8xl text-gray-700	font-semibold font-mono">23<span>&#176;</span></h3>
+                  <p className="text-gray-400 font-semibold font-mono">Coimbra, Portugal</p>
+                </div>
+                <div className="bg-gray">
+                  <img src={sunnyIcon} className="cursor-pointer h-24 w-24" alt="today's weather icon" />
+                </div>
               </div>
-              <div className="bg-gray">
-                <img src={sunnyIcon} className="cursor-pointer h-24 w-24" alt="today's weather icon" />
+              <div className="self-center">
+                <Dots />
               </div>
             </div>
-            <div className="self-center">
-              <Dots />
+            <div className="bg-white rounded-3xl shadow flex-grow w-full flex flex-col mb-4 px-12 pt-8">
+              <div className="flex justify-between">
+                <HourlyForecast />
+                <HourlyForecast />
+                <HourlyForecast />
+                <HourlyForecast />
+                <HourlyForecast />
+              </div>
+              <div className="self-center mt-2">
+                <Dots />
+              </div>
             </div>
-          </div>
-          <div className="bg-white rounded-3xl shadow flex-grow w-full flex flex-col mb-4 px-12 pt-8">
-            <div className="flex justify-between">
-              <HourlyForecast />
-              <HourlyForecast />
-              <HourlyForecast />
-              <HourlyForecast />
-              <HourlyForecast />
-            </div>
-            <div className="self-center mt-2">
-              <Dots />
-            </div>
-          </div>
-          <div className="bg-white rounded-3xl shadow flex-grow w-full flex flex-col mb-4 px-12 pt-8">
-            <div className="flex justify-between">
-              <DailyForecast />
-              <DailyForecast />
-              <DailyForecast />
-              <DailyForecast />
-              <DailyForecast />
-            </div>
-            <div className="self-center mt-2">
-              <Dots />
+            <div className="bg-white rounded-3xl shadow flex-grow w-full flex flex-col mb-4 px-12 pt-8">
+              <div className="flex justify-between">
+                <DailyForecast />
+                <DailyForecast />
+                <DailyForecast />
+                <DailyForecast />
+                <DailyForecast />
+              </div>
+              <div className="self-center mt-2">
+                <Dots />
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <div className="self-start p-4">
-        <div>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
+        <div className="self-center p-4">
+          <div>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
+          </div>
         </div>
-      </div>
-    </main>
-  );
+      </main>
+    </>
+  )
 }
 
 export default App;

@@ -29,7 +29,7 @@ function App() {
     <>
       <main className="bg-gray-200 h-screen flex flex-col">
         <header className="self-center p-4">
-          <img src={logo} className="h-8" />
+          <img src={logo} className="h-8" alt="logo image" />
         </header>
         <div className="flex-grow flex justify-center items-center flex-col">
           <div className="max-w-lg flex flex-wrap">

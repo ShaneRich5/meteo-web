@@ -2,7 +2,7 @@ import React from 'react'
 import dotsIcon from './icons/dots.svg'
 import sunnyIcon from './icons/sunny.svg'
 
-const Dots = () => <img src={dotsIcon} className="cursor-pointer h-6 w-6" />
+const Dots = () => <img src={dotsIcon} className="cursor-pointer h-6 w-6" alt="see more" />
 
 const HourlyForecast = () => (
   <div className="flex flex-col items-center">
@@ -33,7 +33,7 @@ function App() {
                 <p className="text-gray-400 font-semibold font-mono">Coimbra, Portugal</p>
               </div>
               <div className="bg-gray">
-                <img src={sunnyIcon} className="cursor-pointer h-24 w-24" />
+                <img src={sunnyIcon} className="cursor-pointer h-24 w-24" alt="today's weather icon" />
               </div>
             </div>
             <div className="self-center">

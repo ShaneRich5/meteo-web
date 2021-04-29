@@ -23,22 +23,6 @@ const DailyForecast = () => (
 
 function App() {
   return (
-    // <div className="App">
-    //   <header className="App-header">
-    //     <img src={logo} className="App-logo" alt="logo" />
-    //     <p className=" text-gray-700 text-4xl">
-    //       Edit <code>src/App.tsx</code> and save to reload.
-    //     </p>
-    //     <a
-    //       className="App-link"
-    //       href="https://reactjs.org"
-    //       target="_blank"
-    //       rel="noopener noreferrer"
-    //     >
-    //       Learn React
-    //     </a>
-    //   </header>
-    // </div>
     <main className="bg-gray-200 h-screen flex flex-col">
       <div className="flex-grow flex justify-center items-center flex-col">
         <div className="max-w-lg flex flex-wrap">

@@ -20,7 +20,9 @@ Visit the [live site](https://meteo-forecast.netlify.app/).
 - [x] Link back to repo
 - [x] Add sentry error log
 - [ ] Ability to switch between &deg;C and &deg;F
-- [ ] Ability to refresh the weather 
+- [ ] Ability to refresh the weather
+- [ ] Add animejs/rive animations to empty state
+- [ ] Link to blog post
 
 ## 🖥️ Technologies + Frameworks Used
 1. React

@@ -6,7 +6,7 @@ import DegreeSymbol from './components/DegreeSymbol'
 import SearchBar from './components/SearchBar'
 import { CurrentWeather, DailyWeather, HourlyWeather, mapWeatherConditionToIcon, WeatherCondition } from './weather'
 import CurrentWeatherCard from './components/CurrentWeatherCard'
-import { format } from 'date-fns'
+import { add, format } from 'date-fns'
 
 interface HourlyForecastProp {
   time: string
@@ -67,9 +67,14 @@ const App = () => {
     })
 
     setHourlyWeather(
-      data['hourly'].slice(1, 6).map((hourlyWeather: any) => {
-        const date = new Date(1970, 0, 1) // Epoch
-        date.setSeconds(hourlyWeather['dt'])
+      data['hourly'].slice(1, 6).map((hourlyWeather: any, index: number) => {
+        // const date = new Date(1970, 0, 1) // Epoch
+        // date.setSeconds(hourlyWeather['dt'])
+
+        const today = new Date()
+        const now = new Date(today.getFullYear(), today.getMonth(), today.getDate(), today.getHours(), 0, 0)
+
+        const date = add(now, { hours: index + 1 })
 
         const time = format(date, 'HH:mm')
         const period = format(date, 'a')
@@ -84,16 +89,12 @@ const App = () => {
     )
 
     setDailyWeather(
-      data['daily'].slice(1, 6).map((dailyWeather: any) => {
-        const date = new Date(1970, 0, 1) // Epoch
-        date.setSeconds(dailyWeather['dt'])
-
-        const time = format(date, 'HH:mm')
-        const period = format(date, 'a')
+      data['daily'].slice(1, 6).map((dailyWeather: any, index: number) => {
+        const date = new Date()
+        const day = format(add(date, { days: index + 1 }), 'E')
 
         return {
-          time,
-          period,
+          day,
           condition: dailyWeather['weather'][0]['main'],
           temperature: Math.round(dailyWeather['temp']['day'] - 273.15),
         }

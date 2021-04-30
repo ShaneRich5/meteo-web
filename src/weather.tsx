@@ -26,4 +26,23 @@ const weatherConditionToIconMap = {
 
 export type WeatherCondition = 'Thunderstorm' | 'Drizzle' | 'Rain' | 'Snow' | 'Mist' | 'Smoke' | 'Haze' | 'Dust' | 'Fog' | 'Sand' | 'Ash' | 'Squall' | 'Tornado' | 'Clear' | 'Clouds'
 
+export interface Weather {
+  temperature: number
+  condition: WeatherCondition
+}
+
+export interface CurrentWeather extends Weather {
+  city: string
+  country: string
+}
+
+export interface HourlyWeather extends Weather {
+  time: string
+  period: string
+}
+
+export interface DailyWeather extends Weather {
+  day: string
+}
+
 export const mapWeatherConditionToIcon = (condition: WeatherCondition) => weatherConditionToIconMap[condition]

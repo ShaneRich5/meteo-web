@@ -3,9 +3,9 @@
 
 # ⛅ Meteo Web
 
-A weather app being used to gain experience with the latest web technologies. This project was inspired by João Borges's Daily UI challenge [here](https://dribbble.com/shots/10814136-Daily-UI-Challenge-037-Weather)
+A weather app being used to gain experience with the latest web technologies. This project was inspired by João Borges's Daily UI challenge [here](https://dribbble.com/shots/10814136-Daily-UI-Challenge-037-Weather).
 
-Visit the [live site](https://meteo-forecast.netlify.app/)
+Visit the [live site](https://meteo-forecast.netlify.app/).
 
 ## ✔️ TODO
 

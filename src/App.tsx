@@ -8,6 +8,7 @@ import CurrentWeatherCard from './components/CurrentWeatherCard'
 import DailyForecast from './components/DailyForecast'
 import HourlyForecast from './components/HourlyForecast'
 import { add, format } from 'date-fns'
+import githubIcon from './icons/github.svg'
 
 const App = () => {
   const [currentWeather, setCurrentWeather] = useState<CurrentWeather>()
@@ -75,8 +76,12 @@ const App = () => {
 
   return (
     <main className="bg-gray-200 min-h-screen flex flex-col">
-      <header className="self-center p-4">
+      <header className="self-center p-4 w-full flex justify-between">
+        <div></div>
         <img src={logo} className="h-8" alt="logo" />
+        <a href="https://github.com/ShaneRich5/meteo-web">
+          <img src={githubIcon} className="h-8" alt="link to Github repository" />
+        </a>
       </header>
       <div className="flex-grow flex justify-center items-center flex-col">
         <div className="max-w-lg flex flex-wrap">

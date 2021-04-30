@@ -3,7 +3,7 @@
 
 # ⛅ Meteo Web
 
-A weather app being used to gain experience with the latest web technologies
+A weather app being used to gain experience with the latest web technologies.
 
 Visit the [live site](https://meteo-forecast.netlify.app/)
 
@@ -13,12 +13,14 @@ Visit the [live site](https://meteo-forecast.netlify.app/)
 - [x] Configure Tailwind CSS
 - [x] Create the basic site components
 - [x] Deploy to Netlify
-- [ ] Connect to the Open Weather API
-- [ ] Manage environment variables
-- [ ] Ability to change locations
-- [ ] Test With Travis CI
+- [x] Connect to the Open Weather API
+- [x] Manage environment variables
+- [x] Ability to change locations
+- [x] Test With Travis CI
+- [ ] Link back to repo
 
 ## 🖥️ Technologies + Frameworks Used
 1. React
 2. Netlify
 3. Tailwind CSS
+4. Open Weather API

@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import logo from './icons/logo-color.svg'
 import Dots from './components/Dots'
 import SearchBar from './components/SearchBar'
-import { CurrentWeather, DailyWeather, HourlyWeather, mapWeatherConditionToIcon, WeatherCondition } from './weather'
+import { CurrentWeather, DailyWeather, HourlyWeather } from './weather'
 import CurrentWeatherCard from './components/CurrentWeatherCard'
 import DailyForecast from './components/DailyForecast'
 import HourlyForecast from './components/HourlyForecast'
@@ -40,9 +40,6 @@ const App = () => {
 
     setHourlyWeather(
       data['hourly'].slice(1, 6).map((hourlyWeather: any, index: number) => {
-        // const date = new Date(1970, 0, 1) // Epoch
-        // date.setSeconds(hourlyWeather['dt'])
-
         const today = new Date()
         const now = new Date(today.getFullYear(), today.getMonth(), today.getDate(), today.getHours(), 0, 0)
 

@@ -18,6 +18,7 @@ Visit the [live site](https://meteo-forecast.netlify.app/).
 - [x] Ability to change locations
 - [x] Test With Travis CI
 - [x] Link back to repo
+- [ ] Add sentry error log
 
 ## 🖥️ Technologies + Frameworks Used
 1. React

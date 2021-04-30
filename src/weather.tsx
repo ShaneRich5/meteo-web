@@ -24,8 +24,6 @@ const weatherConditionToIconMap = {
   'Clouds': CloudyIcon,
 }
 
-type WeatherCondition = 'Thunderstorm' | 'Drizzle' | 'Rain' | 'Snow' | 'Mist' | 'Smoke' | 'Haze' | 'Dust' | 'Fog' | 'Sand' | 'Ash' | 'Squall' | 'Tornado' | 'Clear' | 'Clouds'
+export type WeatherCondition = 'Thunderstorm' | 'Drizzle' | 'Rain' | 'Snow' | 'Mist' | 'Smoke' | 'Haze' | 'Dust' | 'Fog' | 'Sand' | 'Ash' | 'Squall' | 'Tornado' | 'Clear' | 'Clouds'
 
-const mapWeatherConditionToIcon = (condition: WeatherCondition) => weatherConditionToIconMap[condition]
-
-export { mapWeatherConditionToIcon }
+export const mapWeatherConditionToIcon = (condition: WeatherCondition) => weatherConditionToIconMap[condition]

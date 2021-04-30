@@ -5,6 +5,7 @@ import logo from './icons/logo-color.svg'
 import Dots from './components/Dots'
 import DegreeSymbol from './components/DegreeSymbol'
 import SearchBar from './components/SearchBar'
+import { mapWeatherConditionToIcon, WeatherCondition } from './weather'
 
 const HourlyForecast = () => (
   <div className="flex flex-col items-center">
@@ -23,9 +24,11 @@ const DailyForecast = () => (
   </div>
 )
 
-function App() {
-
-  console.log('REACT_APP_OPEN_WEATHER_MAP_API_KEY:', process.env.REACT_APP_OPEN_WEATHER_MAP_API_KEY)
+const App = () => {
+  const [temperature, setTemperature] = useState<null | number>(null)
+  const [city, setCity] = useState<null | string>(null)
+  const [country, setCountry] = useState<null | string>(null)
+  const [condition, setCondition] = useState<null | WeatherCondition>(null)
 
   const fetchCurrentWeather = async (text: string) => {
     const url = `http://api.openweathermap.org/data/2.5/weather?q=${text}&appid=${process.env.REACT_APP_OPEN_WEATHER_MAP_API_KEY}`
@@ -33,7 +36,15 @@ function App() {
 
     const result = await fetch(url)
     const data = await result.json()
+
     console.log('result:', data)
+
+    setCity(text)
+    setCountry(data['sys']['country'])
+    setCondition(data['weather'][0]['main'])
+    setTemperature(Math.round(data['main']['temp'] - 273.15))
+
+    console.log('temperature:', temperature)
   }
 
   return (
@@ -48,11 +59,11 @@ function App() {
             <div className="bg-white rounded-3xl shadow flex-grow w-full flex flex-col mb-4 px-8 pt-8">
               <div className="flex justify-between pb-4">
                 <div className="flex flex-col justify-center">
-                  <h3 className="text-8xl text-gray-700	font-semibold font-mono">23<DegreeSymbol /></h3>
-                  <p className="text-gray-400 font-semibold font-mono">Coimbra, Portugal</p>
+                  <h3 className="text-8xl text-gray-700	font-semibold font-mono">{temperature ?? 23}<DegreeSymbol /></h3>
+                  <p className="text-gray-400 font-semibold font-mono">{city ?? 'Coimbra'}, {country ?? 'Portugal'}</p>
                 </div>
                 <div className="bg-gray">
-                  <img src={sunnyIcon} className="cursor-pointer h-24 w-24" alt="today's weather icon" />
+                  <img src={condition ? mapWeatherConditionToIcon(condition) : sunnyIcon} className="cursor-pointer h-24 w-24" alt="today's weather icon" />
                 </div>
               </div>
               <div className="self-center">

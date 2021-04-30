@@ -1,11 +1,9 @@
-import React from 'react'
-import dotsIcon from './icons/dots.svg'
+import React, { useEffect } from 'react'
+
 import sunnyIcon from './icons/sunny.svg'
 import logo from './icons/logo-color.svg'
-
-const DegreeSymbol = () => <span>&#176;</span>
-
-const Dots = () => <img src={dotsIcon} className="cursor-pointer h-6 w-6" alt="see more" />
+import Dots from './components/Dots'
+import DegreeSymbol from './components/DegreeSymbol'
 
 const HourlyForecast = () => (
   <div className="flex flex-col items-center">
@@ -25,6 +23,9 @@ const DailyForecast = () => (
 )
 
 function App() {
+
+  console.log('REACT_APP_OPEN_WEATHER_MAP_API_KEY:', process.env.REACT_APP_OPEN_WEATHER_MAP_API_KEY)
+
   return (
     <>
       <main className="bg-gray-200 h-screen flex flex-col">
@@ -33,6 +34,19 @@ function App() {
         </header>
         <div className="flex-grow flex justify-center items-center flex-col">
           <div className="max-w-lg flex flex-wrap">
+
+            <div className="bg-white rounded-3xl shadow flex-grow w-full flex mb-4 px-8 py-3 text-xl">
+              <div className="flex-grow">
+                <input className="w-full font-semibold focus:outline-none" type="text" name="search" placeholder="Enter a city" aria-placeholder="Enter a city" />
+              </div>
+              <div className="text-gray-700">
+                <button className="focus:outline-none">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                  </svg>
+                </button>
+              </div>
+            </div>
             <div className="bg-white rounded-3xl shadow flex-grow w-full flex flex-col mb-4 px-8 pt-8">
               <div className="flex justify-between pb-4">
                 <div className="flex flex-col justify-center">

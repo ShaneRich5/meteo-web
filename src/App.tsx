@@ -103,75 +103,73 @@ const App = () => {
   }
 
   return (
-    <>
-      <main className="bg-gray-200 h-screen flex flex-col">
-        <header className="self-center p-4">
-          <img src={logo} className="h-8" alt="logo" />
-        </header>
-        <div className="flex-grow flex justify-center items-center flex-col">
-          <div className="max-w-lg flex flex-wrap">
-            <SearchBar onSearch={fetchWeather} />
-            {currentWeather
-              ? <CurrentWeatherCard
-                city={currentWeather.city}
-                country={currentWeather.country}
-                condition={currentWeather.condition}
-                temperature={currentWeather.temperature}
-              />
-              : <></>
-            }
+    <main className="bg-gray-200 min-h-screen flex flex-col">
+      <header className="self-center p-4">
+        <img src={logo} className="h-8" alt="logo" />
+      </header>
+      <div className="flex-grow flex justify-center items-center flex-col">
+        <div className="max-w-lg flex flex-wrap">
+          <SearchBar onSearch={fetchWeather} />
+          {currentWeather
+            ? <CurrentWeatherCard
+              city={currentWeather.city}
+              country={currentWeather.country}
+              condition={currentWeather.condition}
+              temperature={currentWeather.temperature}
+            />
+            : <></>
+          }
 
-            {hourlyWeather.length
-              ?
-              <div className="bg-white rounded-3xl shadow flex-grow w-full flex flex-col mb-4 px-12 pt-8">
-                <div className="flex justify-between">
+          {hourlyWeather.length
+            ?
+            <div className="bg-white rounded-3xl shadow flex-grow w-full flex flex-col mb-4 px-12 pt-8">
+              <div className="flex justify-between">
 
-                  {hourlyWeather.map((weather, index) =>
-                    <HourlyForecast
-                      key={index}
-                      time={weather.time}
-                      period={weather.period}
-                      condition={weather.condition}
-                      temperature={weather.temperature}
-                    />
-                  )}
-                </div>
-                <div className="self-center mt-2">
-                  <Dots />
-                </div>
+                {hourlyWeather.map((weather, index) =>
+                  <HourlyForecast
+                    key={index}
+                    time={weather.time}
+                    period={weather.period}
+                    condition={weather.condition}
+                    temperature={weather.temperature}
+                  />
+                )}
               </div>
-              : <></>
-            }
-
-            {dailyWeather.length
-              ?
-              <div className="bg-white rounded-3xl shadow flex-grow w-full flex flex-col mb-4 px-12 pt-8">
-                <div className="flex justify-between">
-
-                  {dailyWeather.map((weather, index) =>
-                    <DailyForecast
-                      key={index}
-                      day={weather.day}
-                      condition={weather.condition}
-                      temperature={weather.temperature}
-                    />
-                  )}
-                </div>
-                <div className="self-center mt-2">
-                  <Dots />
-                </div>
+              <div className="self-center mt-2">
+                <Dots />
               </div>
-              : <></>
-            }
-          </div>
+            </div>
+            : <></>
+          }
+
+          {dailyWeather.length
+            ?
+            <div className="bg-white rounded-3xl shadow flex-grow w-full flex flex-col mb-4 px-12 pt-8">
+              <div className="flex justify-between">
+
+                {dailyWeather.map((weather, index) =>
+                  <DailyForecast
+                    key={index}
+                    day={weather.day}
+                    condition={weather.condition}
+                    temperature={weather.temperature}
+                  />
+                )}
+              </div>
+              <div className="self-center mt-2">
+                <Dots />
+              </div>
+            </div>
+            : <></>
+          }
         </div>
-        <div className="self-center p-4">
-          <div>
-            <p>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></p>
-          </div>
+      </div>
+      <div className="self-center p-4">
+        <div>
+          <p>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></p>
         </div>
-      </main>
-    </>
+      </div>
+    </main>
   )
 }
 

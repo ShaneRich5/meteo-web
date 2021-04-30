@@ -44,14 +44,14 @@ const App = () => {
   const [dailyWeather, setDailyWeather] = useState<DailyWeather[]>([])
 
   const fetchWeather = async (text: string) => {
-    const currentWeatherUrl = `http://api.openweathermap.org/data/2.5/weather?q=${text}&appid=${process.env.REACT_APP_OPEN_WEATHER_MAP_API_KEY}`
+    const currentWeatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=${text}&appid=${process.env.REACT_APP_OPEN_WEATHER_MAP_API_KEY}`
 
     const currentWeatherResult = await fetch(currentWeatherUrl)
     const currentWeatherData = await currentWeatherResult.json()
 
     const { coord: { lon, lat } } = currentWeatherData
 
-    const oneCallUrl = `http://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=${process.env.REACT_APP_OPEN_WEATHER_MAP_API_KEY}`
+    const oneCallUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=${process.env.REACT_APP_OPEN_WEATHER_MAP_API_KEY}`
 
     const result = await fetch(oneCallUrl)
     const data = await result.json()

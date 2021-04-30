@@ -18,7 +18,9 @@ Visit the [live site](https://meteo-forecast.netlify.app/).
 - [x] Ability to change locations
 - [x] Test With Travis CI
 - [x] Link back to repo
-- [ ] Add sentry error log
+- [x] Add sentry error log
+- [ ] Ability to switch between &deg;C and &deg;F
+- [ ] Ability to refresh the weather 
 
 ## 🖥️ Technologies + Frameworks Used
 1. React

@@ -3,7 +3,7 @@
 
 # ⛅ Meteo Web
 
-A weather app being used to gain experience with the latest web technologies.
+A weather app being used to gain experience with the latest web technologies. This project was inspired by João Borges's Daily UI challenge [here](https://dribbble.com/shots/10814136-Daily-UI-Challenge-037-Weather)
 
 Visit the [live site](https://meteo-forecast.netlify.app/)
 
@@ -17,7 +17,7 @@ Visit the [live site](https://meteo-forecast.netlify.app/)
 - [x] Manage environment variables
 - [x] Ability to change locations
 - [x] Test With Travis CI
-- [ ] Link back to repo
+- [x] Link back to repo
 
 ## 🖥️ Technologies + Frameworks Used
 1. React
